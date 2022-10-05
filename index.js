@@ -18,7 +18,6 @@ const DATABASE_URL = process.env.DATABASE_URL || "postgresql://expenser:expenser
 
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
@@ -71,34 +70,27 @@ app.get('/login', async function (req, res){
 } else{
     req.flash('error', 'No username provided')
 }
-// res.redirect("/expenses/"+ username)
 res.redirect("/expenses/name")
 
 })
 
 app.get('/expenses/:name', async function(req, res){
-    // const id= req.body.value;
     const catagory_id= req.body.value;
     const amount= req.body.amount
     const expense_date= req.body.expense_date
-    // const name = req.params.name
-    // await dailyExpenses.setExpense(expens, amount, expense_date)
     let result= await dailyExpenses.getExpense( catagory_id, amount, expense_date)
     res.render('categories', {
         categories: await dailyExpenses.getCategories(),
         name: req.params.name
     })
-  //  req.flash("sucess", "Expense submitted");
 })
 
 app.post('/expenses/:name', async function(req, res){
     const catagory_id= req.body.catagory;
-    // const expens= req.body.value
     const amount= req.body.amount
     const expense_date= req.body.expense_date
     const name = req.params.name
     let result= await dailyExpenses.setExpense(catagory_id, amount, expense_date)
-    console.log('Expense submitted')
     req.flash('success', 'Expense submitted!');
 
     res.redirect('back')
@@ -109,7 +101,6 @@ app.post('/expenses/:name', async function(req, res){
 app.get('/total', async function(req, res){
     let result= await dailyExpenses.showAll()
     let totalExpense= await dailyExpenses.getTotal()
-    console.log(totalExpense)
     let totals= `Total: R${totalExpense}`
     
     res.render('total',{
