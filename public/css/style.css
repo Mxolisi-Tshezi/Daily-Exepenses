@@ -153,17 +153,13 @@ background-color: grey;
 }
 
 .loginboxx{
-    width: 790px;
-    height: 450px;
-    background:white;
+    align-items: center;
     color: black;
-    top: 50%;
+    top: 30%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 40px 30px;
-    border-radius: 20px;
 }
 
 .useExpense{
@@ -176,8 +172,4 @@ background-color: grey;
     font-size: 18px;
     line-height: 20px;
     color: black;
-}
-table{
-
-    border-collapse: collapse;
 }
