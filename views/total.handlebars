@@ -15,9 +15,7 @@
         <div class="success">
             {{messages.success}}
         </div>
-        <table class="useExpense" border="1">
-
-
+        <table class="expenseTable" border="1">
             <tr>
 
                 <th>Cost</th>
@@ -26,8 +24,6 @@
             </tr>
             {{#each expenseCatagory}}
             <tr>
-                {{!-- <td>{{value.id}}</td> --}}
-                {{!-- <td>{{this.category_id}}</td> --}}
                 <td>R{{this.amount}}</td>
                 <td>{{this.expense_date}}</td>
             </tr>

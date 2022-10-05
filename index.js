@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
 app.use(session({
-   secret: 'this is my longest string that is used to test my daily expenses with db app for browser',
+   secret: 'this is my longest string',
    resave: false,
    saveUninitialized: true
 }));
@@ -65,10 +65,10 @@ app.get('/login', async function (req, res){
 
     if (username){
     const code= uid()
-    req.flash('success', 'User was added, use this code' + code)
+    req.flash('success',code)
     
 } else{
-    req.flash('error', 'No username provided')
+    req.flash('error', 'Invalid userName')
 }
 res.redirect("/expenses/name")
 
@@ -91,7 +91,7 @@ app.post('/expenses/:name', async function(req, res){
     const expense_date= req.body.expense_date
     const name = req.params.name
     let result= await dailyExpenses.setExpense(catagory_id, amount, expense_date)
-    req.flash('success', 'Expense submitted!');
+    req.flash('success', 'succesfully added');
 
     res.redirect('back')
 })

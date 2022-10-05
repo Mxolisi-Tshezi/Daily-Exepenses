@@ -16,11 +16,11 @@ background-color: grey;
     width: 100vw;
 }
 
-.useExpense{
+.expenseTable{
     border: 1;
 }
 
-.loginbox {
+.loginpage {
     border-radius: 00.5em;
     box-shadow: rgb(32, 31, 31) 0px 5px 10px 0px;
     width: 50em;
@@ -71,7 +71,7 @@ background-color: grey;
 }
 
 
-.daily{
+.expenseliss{
     color: black;
     top: 40%;
     left: 50%;
@@ -90,7 +90,7 @@ background-color: grey;
     color: red;
 }
 
-.loginbox a {
+.loginpage a {
     text-decoration: none;
     font-size: 18px;
     line-height: 20px;
