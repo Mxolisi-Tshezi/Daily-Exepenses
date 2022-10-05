@@ -13,10 +13,10 @@
     <h1>Expenses list</h1>
     <div class='loginboxx'>
         <div class="success">
-                {{messages.success}}
-            </div>
+            {{messages.success}}
+        </div>
         <table class="useExpense" border="1">
-        
+
 
             <tr>
 
@@ -26,15 +26,17 @@
             </tr>
             {{#each expenseCatagory}}
             <tr>
-            {{!-- <td>{{value.id}}</td> --}}
-            {{!-- <td>{{this.category_id}}</td> --}}
-            <td>R{{this.amount}}</td>
-            <td>{{this.expense_date}}</td>
+                {{!-- <td>{{value.id}}</td> --}}
+                {{!-- <td>{{this.category_id}}</td> --}}
+                <td>R{{this.amount}}</td>
+                <td>{{this.expense_date}}</td>
             </tr>
             {{/each}}
-            
+
         </table>
-               <h3>{{totalSpending}}</h3>
+        <h3>{{totalSpending}}</h3>
+        <a href="/signup"><button class="loginBtn">Reset</button></a>
+
 
 
     </div>
