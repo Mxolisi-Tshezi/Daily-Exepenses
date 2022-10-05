@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="loginbox">
+
+        <div class="success_holder">
+            {{messages.success}}
+        </div>
+        <br><br><br>
+        <form action="/login" method="get">
+
+            {{!-- <label></label> --}}
+            <input type="text" name="code" value="" placeholder="Enter code here"><br><br>
+
+            <a href="/expenses"><button class="loginBtn">sign-in</button></a>
+
+           <br> <br>If not registered click Sign-Up below<br><br>
+            <a href="/signup"><button class="loginBtn">Sign-up</button></a>
+
+
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>

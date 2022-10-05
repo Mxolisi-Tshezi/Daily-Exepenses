@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Expenses Tracker</title>
+</head>
+
+<body>
+
+    <div class='loginbox'>
+        <H2>    sign-up or Sign-In</H2>
+
+
+        <div class="success">
+            {{messages.success}}
+        </div>
+        <form action="/register" method="post">
+
+            <input type="text" name="fname" value="" placeholder="Your Name"><br><br>
+
+            <input type="text" name="sname" value="" placeholder="Your Last name"><br><br>
+
+            <a href="/login"><button class="loginBtn" type="submit">sign-in</button></a>
+            <a href="/signup"><button class="loginBtn">Sign-up</button></a>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

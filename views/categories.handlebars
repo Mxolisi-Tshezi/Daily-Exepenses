@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="daily">
+            <h3>Expenses</h3>
+        <form action="/expenses/{{name}}" method="post">
+            <div class="success_holder">
+                {{messages.success}}
+            </div>
+
+              <br>
+                        <h4>Date</h4>
+
+            <input type="date" name="expense_date" value="" placeholder="">
+            <br>
+            <h4>Category</h4>
+            <select name="catagory">
+                {{#each categories}}
+                <option name='catagory' value="{{id}}">{{cat_description}}</option>
+                {{/each}}
+            </select>
+            <br>
+            <h4>Cost</h4>
+
+            <input type="number" value="" name="amount" step=".01" placeholder="">
+            <br>
+            <br>
+
+            <a href=""><button type="submit" class="btn">Submit</button></a>
+        </form>
+        <br>
+
+        <a href="/total"><button class="btn1">Track</button></a>
+
+    </div>
+
+</body>
+
+</html>
